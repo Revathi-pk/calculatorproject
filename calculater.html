@@ -1,0 +1,138 @@
+<html>
+    <head>
+        <title>calculater</title>
+        <style type="text/css">
+             
+            
+            .calculater{
+                padding: 10px;
+                border-radius: 10px;
+                height: 300px;
+                width: 400px;
+                margin: auto;
+                background-color:gray;
+                box-shadow: 2px 2px 5px 5px rgb(12, 6, 6);
+            }
+
+            .display-box{
+                font-family: 'orbitron' sans-serif;
+                background-color: aqua;
+                border: 1px solid black;
+                border-radius: 5px;
+                height: 65%;
+                width: 100%;
+                color: black;
+
+            }
+
+        
+           /* for clear button style*/
+            #btn{
+                background-color: lightgreen;
+            }
+
+input[type=button]{
+    font-family: 'orbitron' sans-serif;
+    background-color: red;
+    color: white;
+    border:2px solid green;
+    width: 100%;
+    height: 70%;
+    border-radius: 5px;
+    outline: none;
+
+}
+input:active[type=button]{
+    background-color: #504f52;
+    box-shadow: inset 0px 0px 5px #c1c1c1;
+
+}
+body{
+    background-color: lightblue;
+}
+
+#two{
+    background-color: red;
+    color: white;
+}
+        </style>
+    </head>
+    <body>
+<center><h1 id="two">Calculater</h1></center>
+       <table class="calculater">
+        <tr>
+            
+         <!--there is the input box in calculater-->
+          <td colspan="3"><input type="text" class="display-box" id="reslut" disabled>
+  <!-- end of there is the input box in calculater-->
+  </td>  
+
+          <!--there is the button for clear in calculater-->
+         <td >
+            <input type="button" value="c" id="btn" onclick="clearScreen()"></td>
+          <!-- end of there is the button for clear in calculater--> 
+        </tr>
+        <!--first row done -->
+        
+        <!--second row-->
+        <tr>
+        
+            <td><input type="button" value="1" onclick="display(1)"></td>
+            <td><input type="button" value="2"  onclick="display(2)"></td>
+            <td><input type="button" value="3"  onclick="display('3')"></td>
+            <td><input type="button" value="/"  onclick="display('/')"></td>
+        </tr>
+        <!--done second row-->
+
+        <!--thrid row-->
+        <tr>
+            <td><input type="button" value="4" onclick="display('4')"></td>
+            <td><input type="button" value="5" onclick="display('5')"></td>
+            <td><input type="button" value="6" onclick="display('6')"></td>
+            <td><input type="button" value="-"onclick="display('-')" ></td>
+        </tr>
+        <!--done third row-->
+
+        <!--fourth row-->
+        <tr>
+            <td><input type="button" value="7" onclick="display('7')"></td>
+            <td><input type="button" value="8"  onclick="display('8')"></td>
+            <td><input type="button" value="9" onclick="display('9')"></td>
+            <td><input type="button" value="+" onclick="display('+')"></td>
+        </tr>
+        <!--done fourth row-->
+
+        <!--fifth row-->
+        <tr>
+            <td><input type="button" value="-" onclick="display('-')"></td>
+            <td><input type="button" value="0" onclick="display('0')"></td>
+            <td><input type="button" value="=" onclick="calculate()"></td>
+            <td><input type="button" value="*" onclick="display('*')"></td>
+        </tr>
+        <!--done fifth row-->
+        </table>
+     
+<script type="text/javascript">
+    //starting function
+    function display(value) {
+       document.getElementById('reslut').value+=value;// what are the values getting the parameter for display function that only 
+        //(vlaue is the parameter in display box we have print the values one after the another so we are using thais + is to cancat = is to assign ) 
+  }
+function clearScreen()
+
+{
+    document.getElementById('reslut').value="";
+}
+
+function calculate(value)
+{
+    var p=document.getElementById('reslut').value;
+    var q=eval(p);
+    document.getElementById('reslut').value=q;
+}
+
+</script>
+
+
+    </body>
+</html>
